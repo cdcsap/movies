@@ -14,7 +14,6 @@
 			"version": "1.40.12"
 		}
 	},
-
 	"sap.ui": {
 		"technology": "UI5",
 		"icons": {
@@ -31,7 +30,6 @@
 			"phone": true
 		}
 	},
-
 	"sap.ui5": {
 		"flexEnabled": false,
 		"rootView": {
@@ -59,7 +57,6 @@
 					"bundleName": "eco.demo.movies.i18n.i18n"
 				}
 			},
-
 			"movies": {
 				"type": "sap.ui.model.json.JSONModel",
 				"uri": "model/Movies.json"
@@ -81,17 +78,27 @@
 				"clearControlAggregation": false
 			},
 			"routes": [{
-				"name": "RouteApp",
-				"pattern": "RouteApp",
-				"target": ["TargetApp"]
+				"name": "Home",
+				"pattern": "",
+				"target": ["Home"]
+			}, {
+				"name": "Detail",
+				"pattern": "movies/{movieId}/appointments/{appointmentId}",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Detail"]
 			}],
 			"targets": {
-				"TargetApp": {
+				"Home": {
 					"viewType": "XML",
 					"transition": "slide",
 					"clearControlAggregation": false,
-					"viewId": "App",
-					"viewName": "App"
+					"viewId": "Home",
+					"viewName": "Home"
+				},
+				"Detail": {
+					"viewType": "XML",
+					"viewName": "Detail"
 				}
 			}
 		}
